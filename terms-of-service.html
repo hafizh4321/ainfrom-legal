@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – AInform Daily Post</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --surface: #18181c;
+      --border: #2a2a30;
+      --text: #e8e8ec;
+      --muted: #888896;
+      --accent: #7c6af7;
+      --accent-soft: rgba(124, 106, 247, 0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 24px;
+      transition: color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--text); }
+    nav a.active { color: var(--accent); }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .doc-badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .doc-date {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .doc-intro {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 52px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 52px;
+    }
+
+    .toc-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      font-size: 13px;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero) ". ";
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .toc a:hover { color: var(--text); }
+
+    section {
+      margin-bottom: 44px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .sec-num {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    p { color: var(--text); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    ul li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      color: var(--text);
+    }
+
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .platform-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .contact-box p { color: var(--muted); font-size: 14px; }
+    .contact-box a { color: var(--accent); text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 600px) {
+      .container { padding: 40px 20px 80px; }
+      header { padding: 16px 20px; }
+      footer { padding: 20px; }
+      h1 { font-size: 26px; }
+      .toc ol { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#"><span>AI</span>nform Daily Post</a>
+  <nav>
+    <a href="terms-of-service.html" class="active">Terms of Service</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="doc-meta">
+    <span class="doc-badge">Legal</span>
+    <span class="doc-date">Last updated: June 9, 2026</span>
+  </div>
+
+  <h1>Terms of Service</h1>
+  <p class="doc-intro">Please read these terms carefully before using AInform Daily Post. By accessing or using this service, you agree to be bound by these terms.</p>
+
+  <div class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#s1">About This Service</a></li>
+      <li><a href="#s2">Eligibility</a></li>
+      <li><a href="#s3">Permitted Use</a></li>
+      <li><a href="#s4">Third-Party Platforms</a></li>
+      <li><a href="#s5">Content & Ownership</a></li>
+      <li><a href="#s6">Data & Privacy</a></li>
+      <li><a href="#s7">Prohibited Conduct</a></li>
+      <li><a href="#s8">Disclaimer of Warranties</a></li>
+      <li><a href="#s9">Limitation of Liability</a></li>
+      <li><a href="#s10">Termination</a></li>
+      <li><a href="#s11">Governing Law</a></li>
+      <li><a href="#s12">Changes to Terms</a></li>
+      <li><a href="#s13">Contact</a></li>
+    </ol>
+  </div>
+
+  <section id="s1">
+    <h2><span class="sec-num">01</span> About This Service</h2>
+    <p>AInform Daily Post is a private, single-user automation tool that enables the account owner to manage and publish original content to third-party social media platforms via their respective APIs. The service is built on n8n workflow automation and is not offered to the general public.</p>
+    <p>This service does not function as a social media platform, content marketplace, or multi-user application.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="sec-num">02</span> Eligibility</h2>
+    <p>Use of AInform Daily Post is restricted to the individual account owner. You must be at least 18 years of age and legally capable of entering into binding agreements. This service is not directed at or intended for use by minors.</p>
+  </section>
+
+  <section id="s3">
+    <h2><span class="sec-num">03</span> Permitted Use</h2>
+    <p>You may use this service solely to:</p>
+    <ul>
+      <li>Automate posting of your own original content to connected social media platforms</li>
+      <li>Manage content scheduling and workflow automation for your personal or business accounts</li>
+      <li>Read and organize data returned from platform APIs for your own accounts</li>
+    </ul>
+    <p>Any use beyond this scope is not authorized under these Terms.</p>
+  </section>
+
+  <section id="s4">
+    <h2><span class="sec-num">04</span> Third-Party Platforms</h2>
+    <p>This service integrates with the following third-party platforms via their official APIs:</p>
+    <div class="platform-chips">
+      <span class="chip">Pinterest</span>
+      <span class="chip">TikTok</span>
+      <span class="chip">Snapchat</span>
+      <span class="chip">Instagram</span>
+      <span class="chip">Twitter / X</span>
+      <span class="chip">Facebook</span>
+      <span class="chip">YouTube</span>
+    </div>
+    <p>Your use of each platform through this service remains subject to that platform's own Terms of Service, Developer Policies, and Community Guidelines. AInform Daily Post is not affiliated with, endorsed by, or sponsored by any of these platforms.</p>
+    <div class="highlight-box">
+      You are solely responsible for ensuring your content and usage comply with the policies of each platform you connect to.
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2><span class="sec-num">05</span> Content & Ownership</h2>
+    <p>You retain full ownership of all content you create and publish through this service. By using AInform Daily Post, you represent and warrant that:</p>
+    <ul>
+      <li>You own or have the necessary rights to publish all content</li>
+      <li>Your content does not violate any third-party intellectual property rights</li>
+      <li>Your content complies with applicable laws and platform policies</li>
+      <li>You are not using this service to distribute spam, misinformation, or harmful content</li>
+    </ul>
+    <p>AInform Daily Post claims no ownership over content you publish.</p>
+  </section>
+
+  <section id="s6">
+    <h2><span class="sec-num">06</span> Data & Privacy</h2>
+    <p>AInform Daily Post does not collect, store, or sell personal data. API tokens and credentials used to authenticate with third-party platforms are stored locally within your own n8n instance and are never transmitted to or retained by AInform Daily Post servers.</p>
+    <p>For full details on how data is handled, please refer to our <a href="privacy-policy.html" style="color: var(--accent); text-decoration: none;">Privacy Policy</a>.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="sec-num">07</span> Prohibited Conduct</h2>
+    <p>You agree not to use this service to:</p>
+    <ul>
+      <li>Post content that violates any applicable law or regulation</li>
+      <li>Infringe the intellectual property rights of any third party</li>
+      <li>Distribute spam, malware, or deceptive content</li>
+      <li>Attempt to gain unauthorized access to any system or platform</li>
+      <li>Circumvent rate limits or violate API usage policies of connected platforms</li>
+      <li>Harass, threaten, or harm any individual or group</li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <h2><span class="sec-num">08</span> Disclaimer of Warranties</h2>
+    <p>This service is provided "as is" and "as available" without any warranties of any kind, express or implied. AInform Daily Post makes no representations regarding uptime, reliability, or fitness for a particular purpose. Third-party API availability is outside our control and may affect service functionality at any time.</p>
+  </section>
+
+  <section id="s9">
+    <h2><span class="sec-num">09</span> Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, AInform Daily Post and its owner shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this service, including but not limited to loss of data, loss of revenue, or platform account suspension resulting from your content or API usage.</p>
+  </section>
+
+  <section id="s10">
+    <h2><span class="sec-num">10</span> Termination</h2>
+    <p>You may stop using this service at any time. You can revoke API access granted to this service through the settings of each connected platform. Upon termination, any active workflows will cease and no further API calls will be made on your behalf.</p>
+  </section>
+
+  <section id="s11">
+    <h2><span class="sec-num">11</span> Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with applicable laws. Any disputes arising from the use of this service shall be resolved in accordance with the laws of the jurisdiction where the account owner resides.</p>
+  </section>
+
+  <section id="s12">
+    <h2><span class="sec-num">12</span> Changes to Terms</h2>
+    <p>We reserve the right to update these Terms at any time. Changes will be reflected by the updated "Last Updated" date at the top of this page. Continued use of the service after any changes constitutes acceptance of the revised Terms.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section id="s13">
+    <h2><span class="sec-num">13</span> Contact</h2>
+    <div class="contact-box">
+      <p>If you have any questions about these Terms of Service, please reach out:</p>
+      <p style="margin-top: 12px;"><strong style="color: var(--text);">Email:</strong> <a href="mailto:factablehub123@gmail.com">factablehub123@gmail.com</a></p>
+      <p><strong style="color: var(--text);">Service:</strong> AInform Daily Post</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 AInform Daily Post</span>
+  <div class="footer-links">
+    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:factablehub123@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
