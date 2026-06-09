@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – AInform Daily Post</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --surface: #18181c;
+      --border: #2a2a30;
+      --text: #e8e8ec;
+      --muted: #888896;
+      --accent: #7c6af7;
+      --accent-soft: rgba(124, 106, 247, 0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 24px;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--accent); }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .doc-badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .doc-date {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .doc-intro {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 52px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 52px;
+    }
+
+    .toc-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      font-size: 13px;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero) ". ";
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .toc a:hover { color: var(--text); }
+
+    section {
+      margin-bottom: 44px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .sec-num {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    p { color: var(--text); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    ul li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      color: var(--text);
+    }
+
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .contact-box p { color: var(--muted); font-size: 14px; }
+    .contact-box a { color: var(--accent); text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 600px) {
+      .container { padding: 40px 20px 80px; }
+      header { padding: 16px 20px; }
+      footer { padding: 20px; }
+      h1 { font-size: 26px; }
+      .toc ol { grid-template-columns: 1fr; }
+      table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#"><span>AI</span>nform Daily Post</a>
+  <nav>
+    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="privacy-policy.html" class="active">Privacy Policy</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="doc-meta">
+    <span class="doc-badge">Legal</span>
+    <span class="doc-date">Last updated: June 9, 2026</span>
+  </div>
+
+  <h1>Privacy Policy</h1>
+  <p class="doc-intro">AInform Daily Post is committed to protecting your privacy. This policy explains what information is handled when you use this service, and how it is used.</p>
+
+  <div class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#p1">Overview</a></li>
+      <li><a href="#p2">Information We Do Not Collect</a></li>
+      <li><a href="#p3">Information Processed in Transit</a></li>
+      <li><a href="#p4">API Credentials & Tokens</a></li>
+      <li><a href="#p5">Third-Party Platforms</a></li>
+      <li><a href="#p6">Cookies & Tracking</a></li>
+      <li><a href="#p7">Children's Privacy</a></li>
+      <li><a href="#p8">Data Security</a></li>
+      <li><a href="#p9">Data Retention</a></li>
+      <li><a href="#p10">Your Rights</a></li>
+      <li><a href="#p11">Changes to Policy</a></li>
+      <li><a href="#p12">Contact</a></li>
+    </ol>
+  </div>
+
+  <section id="p1">
+    <h2><span class="sec-num">01</span> Overview</h2>
+    <p>AInform Daily Post is a private, single-user automation tool. It is not a public-facing app or service. No user accounts are created, no sign-up is required, and no personal data is collected from third parties or visitors.</p>
+    <div class="highlight-box">
+      This service does not collect, store, sell, or share personal data. Period.
+    </div>
+  </section>
+
+  <section id="p2">
+    <h2><span class="sec-num">02</span> Information We Do Not Collect</h2>
+    <p>AInform Daily Post does not collect any of the following:</p>
+    <ul>
+      <li>Names, email addresses, or contact information</li>
+      <li>IP addresses or device identifiers</li>
+      <li>Browsing behavior or usage analytics</li>
+      <li>Location data</li>
+      <li>Payment or financial information</li>
+      <li>Any personally identifiable information (PII)</li>
+    </ul>
+  </section>
+
+  <section id="p3">
+    <h2><span class="sec-num">03</span> Information Processed in Transit</h2>
+    <p>When the service operates, it processes the following data in real-time solely to perform its automation functions:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Retained?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content (text, images, captions)</td>
+          <td>Publishing to connected platforms</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>API responses from platforms</td>
+          <td>Confirming post success/failure</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Workflow execution logs</td>
+          <td>Debugging within n8n (local only)</td>
+          <td>Local only</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>No data is transmitted to any AInform Daily Post servers. All processing occurs locally within the user's own n8n instance.</p>
+  </section>
+
+  <section id="p4">
+    <h2><span class="sec-num">04</span> API Credentials & Tokens</h2>
+    <p>OAuth tokens and API credentials used to authenticate with third-party platforms and online services are:</p>
+    <ul>
+      <li>Stored locally within the user's own n8n environment</li>
+      <li>Never transmitted to or stored by AInform Daily Post</li>
+      <li>Under the sole control of the account owner</li>
+      <li>Revocable at any time through each platform's developer or account settings</li>
+    </ul>
+  </section>
+
+  <section id="p5">
+    <h2><span class="sec-num">05</span> Third-Party Platforms</h2>
+    <p>This service may send content to third-party social media platforms and online services on behalf of the account owner via their official APIs. Once content is submitted to a platform's API, that platform's own privacy policy governs how it is handled.</p>
+    <p>AInform Daily Post has no control over and takes no responsibility for the privacy practices of any third-party platform or service connected through this tool. The account owner is encouraged to review the privacy policy of each platform they choose to connect to.</p>
+  </section>
+
+  <section id="p6">
+    <h2><span class="sec-num">06</span> Cookies & Tracking</h2>
+    <p>AInform Daily Post does not use cookies, tracking pixels, analytics scripts, or any third-party tracking technology. No behavioral data is collected from visitors to pages associated with this service.</p>
+  </section>
+
+  <section id="p7">
+    <h2><span class="sec-num">07</span> Children's Privacy</h2>
+    <p>This service is not directed at, designed for, or intended to be used by individuals under the age of 18. AInform Daily Post does not knowingly collect any information from children. If you believe a minor has used this service, please contact us immediately so we can take appropriate action.</p>
+  </section>
+
+  <section id="p8">
+    <h2><span class="sec-num">08</span> Data Security</h2>
+    <p>Because AInform Daily Post does not collect or store personal data on external servers, the primary security responsibility lies with the user's local n8n environment. We recommend:</p>
+    <ul>
+      <li>Keeping your n8n instance and server software up to date</li>
+      <li>Using strong, unique credentials for your n8n instance</li>
+      <li>Restricting network access to your n8n deployment</li>
+      <li>Rotating API tokens periodically and revoking unused ones</li>
+    </ul>
+  </section>
+
+  <section id="p9">
+    <h2><span class="sec-num">09</span> Data Retention</h2>
+    <p>AInform Daily Post retains no personal data. Workflow execution logs stored within your local n8n instance are entirely under your control and can be deleted at any time through the n8n interface. Content published to third-party platforms is subject to those platforms' own retention and deletion policies.</p>
+  </section>
+
+  <section id="p10">
+    <h2><span class="sec-num">10</span> Your Rights</h2>
+    <p>As no personal data is collected by AInform Daily Post, there is no data held about you to access, correct, or delete. If you have concerns about data held by a connected platform, please exercise your rights directly through that platform's privacy settings or data request process.</p>
+  </section>
+
+  <section id="p11">
+    <h2><span class="sec-num">11</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be reflected by the updated "Last Updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section id="p12">
+    <h2><span class="sec-num">12</span> Contact</h2>
+    <div class="contact-box">
+      <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+      <p style="margin-top: 12px;"><strong style="color: var(--text);">Email:</strong> <a href="mailto:factablehub123@gmail.com">factablehub123@gmail.com</a></p>
+      <p><strong style="color: var(--text);">Service:</strong> AInform Daily Post</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 AInform Daily Post</span>
+  <div class="footer-links">
+    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:factablehub123@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
